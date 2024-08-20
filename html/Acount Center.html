@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Account Center - CIB</title>
+    <link rel="icon" href="Screenshot 2024-05-20 104602.jpg">
+    <style>
+        /* Your existing CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar {
+            width: 250px;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #007BFF;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .content h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .profile-info,
+        .account-settings,
+        .activity-history {
+            margin-bottom: 30px;
+        }
+
+        .profile-info label,
+        .account-settings label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .profile-info input,
+        .account-settings input,
+        .account-settings select,
+        .profile-info textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .profile-info button,
+        .account-settings button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .profile-info button:hover,
+        .account-settings button:hover {
+            background-color: #0056b3;
+        }
+
+        .activity-history table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .activity-history table,
+        .activity-history th,
+        .activity-history td {
+            border: 1px solid #ddd;
+        }
+
+        .activity-history th,
+        .activity-history td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .activity-history th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 data-i18n="title">Account Center - CIB</h1>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2 data-i18n="menu">Menu</h2>
+            <a href="#profile" data-i18n="profile">Profile Info</a>
+            <a href="#settings" data-i18n="settings">Account Settings</a>
+            <a href="#activity" data-i18n="activity">Activity History</a>
+        </div>
+
+        <div class="content">
+            <section id="profile" class="profile-info">
+                <h2 data-i18n="profile">Profile Information</h2>
+                <form id="profile-form">
+                    <label for="username" data-i18n="username">Username:</label>
+                    <input type="text" id="username" name="username" disabled>
+
+                    <label for="phone" data-i18n="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" disabled>
+
+                    <label for="password" data-i18n="password">Password:</label>
+                    <input type="password" id="password" name="password" disabled>
+
+                    <button type="button" id="edit-button" data-i18n="editButton">Edit Profile</button>
+                </form>
+            </section>
+
+            <section id="settings" class="account-settings">
+                <h2 data-i18n="settings">Account Settings</h2>
+                <form>
+                    <label for="new-password" data-i18n="changePassword">Change Password:</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="New password">
+
+                    <label for="language" data-i18n="preferredLanguage">Preferred Language:</label>
+                    <select id="language" name="language">
+                        <option value="en">English</option>
+                        <option value="es">Spanish</option>
+                        <option value="ar">Arabic</option>
+                        <option value="fr">French</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+
+                    <label for="notifications" data-i18n="notifications">Notifications:</label>
+                    <input type="checkbox" id="notifications" name="notifications" checked>
+                    <label for="notifications" data-i18n="receiveNotifications">Receive email notifications</label>
+
+                    <button type="submit" data-i18n="saveButton">Save Changes</button>
+                </form>
+            </section>
+
+            <section id="activity" class="activity-history">
+                <h2 data-i18n="activity">Activity History</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th data-i18n="date">Date</th>
+                            <th data-i18n="activityHeader">Activity</th>
+                            <th data-i18n="status">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2024-08-01</td>
+                            <td>Profile updated</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>2024-07-15</td>
+                            <td>Password changed</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>2024-07-10</td>
+                            <td>Logged in</td>
+                            <td>Successful</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="C:\Users\Fares\prgraming\Web Design\sesson5\CIB\CIB-main\CIB-main\js\languages.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const savedLanguage = localStorage.getItem('language') || 'en';
+            applyLanguage(savedLanguage);
+
+            document.getElementById('language').addEventListener('change', function () {
+                const selectedLanguage = this.value;
+                localStorage.setItem('language', selectedLanguage);
+                applyLanguage(selectedLanguage);
+            });
+
+            function applyLanguage(lang) {
+                const elements = document.querySelectorAll('[data-i18n]');
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    el.textContent = languages[lang][key] || key;
+                });
+
+                document.getElementById('page-title').textContent = languages[lang].title || 'Account Center - CIB';
+            }
+
+            // Profile form functionality
+            const editButton = document.getElementById('edit-button');
+            const profileForm = document.getElementById('profile-form');
+            let isEditing = false;
+
+            editButton.addEventListener('click', () => {
+                if (isEditing) {
+                    // Save changes and disable inputs
+                    editButton.textContent = languages[savedLanguage].editButton || 'Edit Profile';
+                    toggleInputs(false);
+                    // Add functionality to save changes here
+                } else {
+                    // Enable inputs for editing
+                    editButton.textContent = languages[savedLanguage].saveButton || 'Save Profile';
+                    toggleInputs(true);
+                }
+                isEditing = !isEditing;
+            });
+
+            function toggleInputs(enable) {
+                const inputs = profileForm.querySelectorAll('input');
+                inputs.forEach(input => {
+                    input.disabled = !enable;
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
